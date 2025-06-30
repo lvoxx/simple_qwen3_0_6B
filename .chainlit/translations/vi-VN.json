@@ -1,0 +1,214 @@
+{
+    "common": {
+        "actions": {
+            "cancel": "Hủy",
+            "confirm": "Xác nhận",
+            "continue": "Tiếp tục",
+            "goBack": "Quay lại",
+            "reset": "Đặt lại",
+            "submit": "Gửi"
+        },
+        "status": {
+            "loading": "Đang tải...",
+            "error": {
+                "default": "Đã xảy ra lỗi",
+                "serverConnection": "Không thể kết nối đến máy chủ"
+            }
+        }
+    },
+    "auth": {
+        "login": {
+            "title": "Đăng nhập để truy cập ứng dụng",
+            "form": {
+                "email": {
+                    "label": "Địa chỉ email",
+                    "required": "email là trường bắt buộc"
+                },
+                "password": {
+                    "label": "Mật khẩu",
+                    "required": "mật khẩu là trường bắt buộc"
+                },
+                "actions": {
+                    "signin": "Đăng nhập"
+                },
+                "alternativeText": {
+                    "or": "HOẶC"
+                }
+            },
+            "errors": {
+                "default": "Không thể đăng nhập",
+                "signin": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "oauthSignin": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "redirectUriMismatch": "URI chuyển hướng không khớp với cấu hình ứng dụng OAuth",
+                "oauthCallback": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "oauthCreateAccount": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "emailCreateAccount": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "callback": "Hãy thử đăng nhập bằng một tài khoản khác",
+                "oauthAccountNotLinked": "Để xác nhận danh tính của bạn, hãy đăng nhập bằng cùng một tài khoản bạn đã sử dụng ban đầu",
+                "emailSignin": "Không thể gửi e-mail",
+                "emailVerify": "Vui lòng xác minh email của bạn, một email mới đã được gửi",
+                "credentialsSignin": "Đăng nhập không thành công. Kiểm tra lại thông tin bạn đã cung cấp",
+                "sessionRequired": "Vui lòng đăng nhập để truy cập trang này"
+            }
+        },
+        "provider": {
+            "continue": "Tiếp tục với {{provider}}"
+        }
+    },
+    "chat": {
+        "input": {
+            "placeholder": "Nhập tin nhắn của bạn vào đây...",
+            "actions": {
+                "send": "Gửi tin nhắn",
+                "stop": "Dừng tác vụ",
+                "attachFiles": "Đính kèm tệp"
+            }
+        },
+        "speech": {
+            "start": "Bắt đầu ghi âm",
+            "stop": "Dừng ghi âm",
+            "connecting": "Đang kết nối"
+        },
+        "fileUpload": {
+            "dragDrop": "Kéo và thả tệp vào đây",
+            "browse": "Duyệt tệp",
+            "sizeLimit": "Giới hạn:",
+            "errors": {
+                "failed": "Tải lên không thành công",
+                "cancelled": "Đã hủy tải lên của"
+            }
+        },
+        "messages": {
+            "status": {
+                "using": "Đang sử dụng",
+                "used": "Đã sử dụng"
+            },
+            "actions": {
+                "copy": {
+                    "button": "Sao chép vào bảng nhớ tạm",
+                    "success": "Đã sao chép!"
+                }
+            },
+            "feedback": {
+                "positive": "Hữu ích",
+                "negative": "Không hữu ích",
+                "edit": "Chỉnh sửa phản hồi",
+                "dialog": {
+                    "title": "Thêm bình luận",
+                    "submit": "Gửi phản hồi"
+                },
+                "status": {
+                    "updating": "Đang cập nhật",
+                    "updated": "Đã cập nhật phản hồi"
+                }
+            }
+        },
+        "history": {
+            "title": "Các Lần Nhập Cuối Cùng",
+            "empty": "Trống rỗng...",
+            "show": "Hiện lịch sử"
+        },
+        "settings": {
+            "title": "Bảng cài đặt"
+        },
+        "watermark": "Được xây dựng với"
+    },
+    "threadHistory": {
+        "sidebar": {
+            "title": "Các cuộc trò chuyện trước đây",
+            "filters": {
+                "search": "Tìm kiếm",
+                "placeholder": "Tìm kiếm cuộc hội thoại..."
+            },
+            "timeframes": {
+                "today": "Hôm nay",
+                "yesterday": "Hôm qua",
+                "previous7days": "7 ngày trước",
+                "previous30days": "30 ngày trước"
+            },
+            "empty": "Không tìm thấy chuỗi nào",
+            "actions": {
+                "close": "Đóng thanh bên",
+                "open": "Mở thanh bên"
+            }
+        },
+        "thread": {
+            "untitled": "Cuộc trò chuyện chưa có tiêu đề",
+            "menu": {
+                "rename": "Đổi tên",
+                "delete": "Xóa"
+            },
+            "actions": {
+                "delete": {
+                    "title": "Xác nhận xóa",
+                    "description": "Thao tác này sẽ xóa chuỗi cũng như các tin nhắn và phần tử của nó. Hành động này không thể hoàn tác",
+                    "success": "Đã xóa trò chuyện",
+                    "inProgress": "Đang xóa trò chuyện"
+                },
+                "rename": {
+                    "title": "Đổi tên chuỗi",
+                    "description": "Nhập tên mới cho chuỗi này",
+                    "form": {
+                        "name": {
+                            "label": "Tên",
+                            "placeholder": "Nhập tên mới"
+                        }
+                    },
+                    "success": "Đã đổi tên chuỗi!",
+                    "inProgress": "Đang đổi tên chuỗi"
+                }
+            }
+        }
+    },
+    "navigation": {
+        "header": {
+            "chat": "Trò chuyện",
+            "readme": "Tệp Readme",
+            "theme": {
+                "light": "Chủ đề sáng",
+                "dark": "Chủ đề tối",
+                "system": "Theo hệ thống"
+            }
+        },
+        "newChat": {
+            "button": "Trò chuyện mới",
+            "dialog": {
+                "title": "Tạo trò chuyện mới",
+                "description": "Thao tác này sẽ xóa lịch sử trò chuyện hiện tại của bạn. Bạn có chắc muốn tiếp tục không?",
+                "tooltip": "Trò chuyện mới"
+            }
+        },
+        "user": {
+            "menu": {
+                "settings": "Cài đặt",
+                "settingsKey": "S",
+                "apiKeys": "Khóa API",
+                "logout": "Đăng xuất"
+            }
+        }
+    },
+    "apiKeys": {
+        "title": "Khóa API bắt buộc",
+        "description": "Để sử dụng ứng dụng này, các khóa API sau là bắt buộc. Các khóa được lưu trữ trên bộ nhớ cục bộ của thiết bị của bạn.",
+        "success": {
+            "saved": "Đã lưu thành công"
+        }
+    },
+    "alerts": {
+        "info": "Thông tin",
+        "note": "Lưu ý",
+        "tip": "Mẹo",
+        "important": "Quan trọng",
+        "warning": "Cảnh báo",
+        "caution": "Thận trọng",
+        "debug": "Gỡ lỗi",
+        "example": "Ví dụ",
+        "success": "Thành công",
+        "help": "Trợ giúp",
+        "idea": "Ý tưởng",
+        "pending": "Đang chờ xử lý",
+        "security": "Bảo mật",
+        "beta": "Beta",
+        "best-practice": "Thực hành tốt nhất"
+    }
+}
