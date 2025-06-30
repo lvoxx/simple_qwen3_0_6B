@@ -43,8 +43,18 @@ pip install -r requirements.txt
 
 ### Development
 
+Quick run
 ```bash
 chainlit run app.py -w
+```
+
+With Makefile
+```bash
+make build       # Use all 3 compose files to build
+make up          # Starts all services (app, Redis cache, etc.)
+make bash        # Shell into app container
+make logs        # Stream logs
+make clean       # Delete container + image
 ```
 
 Then open your browser at `http://localhost:8000`.
