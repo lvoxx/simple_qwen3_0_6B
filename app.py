@@ -66,23 +66,27 @@ async def set_starters():
 
 @cl.on_message
 async def on_message(message: cl.Message):
-    user_msg = message.content
+    prompt = message.content
 
     settings = cl.user_session.get("chat_settings") or {}
     selected_value = settings.get("active_mode")
 
-    msg = cl.Message(content="")  # Placeholder for streaming
+    msg = cl.Message(content="")  # Placeholder for streaming    
     await msg.send()
 
-    try:
-        selected_mode = ChatMode(selected_value)
-    except ValueError:
-        selected_mode = ChatMode.THINKING  # fallback default
-
-    if selected_mode == ChatMode.THINKING:
-        response = await chatbot.generate_response(user_msg, msg, True)
+    response = cache.get(prompt)
+    if response:
+        await chatbot.give_cached_response(response, msg)
     else:
-        response = await chatbot.generate_response(user_msg, msg, False)
+        try:
+            selected_mode = ChatMode(selected_value)
+        except ValueError:
+            selected_mode = ChatMode.THINKING  # fallback default
+
+        if selected_mode == ChatMode.THINKING:
+            response = await chatbot.generate_response(prompt, msg, True)
+        else:
+            response = await chatbot.generate_response(prompt, msg, False)
 
     print(response)
 

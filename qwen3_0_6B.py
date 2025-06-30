@@ -1,4 +1,5 @@
 import torch
+import asyncio
 import threading
 import chainlit as cl
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
@@ -21,6 +22,13 @@ class QwenChatbot:
 
         self.model = model.to(self.device)
         self.history = []
+
+    async def give_cached_response(
+        self, cached_response: str, msg: cl.Message, delay: float = 0.02
+    ):
+        for token in cached_response.split():
+            await msg.stream_token(token + " ")
+            await asyncio.sleep(delay)
 
     async def generate_response(
         self, prompt: str, msg: cl.Message, thinking_mode: bool = False
