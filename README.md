@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ### Development
 
 ```bash
-python app.py
+chainlit run app.py -w
 ```
 
 Then open your browser at `http://localhost:8000`.
