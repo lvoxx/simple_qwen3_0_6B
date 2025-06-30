@@ -1,0 +1,3 @@
+networks:
+  gwen-chatbot:
+    driver: bridge

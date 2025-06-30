@@ -1,0 +1,29 @@
+services:
+  chainlit-app:
+    build: .
+    container_name: chainlit_container
+    ports:
+      - "8000:8000"
+    volumes:
+      - /app:/app
+    restart: unless-stopped
+    networks:
+      - gwen-chatbot
+    depends_on:
+      - redis
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    runtime: nvidia
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis
+    restart: always
+    networks:
+      - gwen-chatbot
+    ports:
+      - "6379:6379"
