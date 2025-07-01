@@ -135,7 +135,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+#.env <= WARNING: For dev only
 .envrc
 .venv
 env/
