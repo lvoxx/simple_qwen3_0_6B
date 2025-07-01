@@ -2,7 +2,9 @@
 
 **Simple AI chatbot web application with Qwen3 0.6B model**
 
-A lightweight, easy-to-deploy chatbot built on the **Qwen3 0.6B** language model, wrapped in a web interface using Python (Chainlit + FastAPI or Flask). Designed for local or containerized deployment.
+A lightweight, easy-to-deploy chatbot built on the [**Qwen3 0.6B**](https://huggingface.co/Qwen/Qwen3-0.6B) language model, wrapped in a web interface using Python (Chainlit). Designed for local or containerized deployment.
+
+![Architecture Diagram](assets/diagram.png)
 
 ---
 
@@ -13,6 +15,18 @@ A lightweight, easy-to-deploy chatbot built on the **Qwen3 0.6B** language model
 - Optional Dockerized setup for easy deployment  
 - Includes caching layer to speed up repeated queries  
 - Supports different chat modes (e.g., single-answer vs. multi-turn)
+
+## Demo
+
+### Chat Demo 
+
+![](assets/demo1.png)
+
+![](assets/demo2.png)
+
+### GPU Matrix - Nvidia Geforce RTX 3060TI
+
+![](assets/gpu_matrix.png)
 
 ---
 
@@ -118,7 +132,7 @@ For questions or collaboration, open an issue or reach out to the maintainer.
 ## ✅ To Add / Improve
 
 - Fill in actual model-loading logic in `qwen3_0_6B.py`  
-- Enhance frontend in `public/`  
+- Enhance frontend icons in `public/`  
 - Add unit tests  
 - CI/CD configuration (GitHub Actions)  
 - Deployment docs (e.g., Heroku, AWS, etc.)
