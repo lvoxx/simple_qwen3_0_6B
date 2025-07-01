@@ -12,7 +12,7 @@ class QwenChatbot:
         print(f"[Init] Loading model: {model_name}")
         print(f"[Init] Device: {self.device}")
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
         model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
 
         # Multi-GPU support
@@ -28,6 +28,7 @@ class QwenChatbot:
     ):
         for token in cached_response.split():
             await msg.stream_token(token + " ")
+            # Fake chat generation
             await asyncio.sleep(delay)
 
     async def generate_response(

@@ -17,6 +17,7 @@ def load_envs():
 @cl.on_app_startup
 def on_app_startup():
     load_dotenv()
+    
     global chatbot, cache, model_name, multi_gpus
     model_name, multi_gpus = load_envs()
     
@@ -66,6 +67,7 @@ async def set_starters():
 
 @cl.on_message
 async def on_message(message: cl.Message):
+    global chatbot, cache
     prompt = message.content
 
     settings = cl.user_session.get("chat_settings") or {}
@@ -76,8 +78,10 @@ async def on_message(message: cl.Message):
 
     response = cache.get(prompt)
     if response:
+        print(f"[INFO] Use cache for promtp: {prompt}")
         await chatbot.give_cached_response(response, msg)
     else:
+        print()
         try:
             selected_mode = ChatMode(selected_value)
         except ValueError:
@@ -85,6 +89,8 @@ async def on_message(message: cl.Message):
 
         if selected_mode == ChatMode.THINKING:
             response = await chatbot.generate_response(prompt, msg, True)
+        ## elif:
+        ## other models: gen Image, search webs,...etc
         else:
             response = await chatbot.generate_response(prompt, msg, False)
 

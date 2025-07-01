@@ -1,5 +1,4 @@
 chainlit==2.5.5
 python-dotenv==1.1.1
 redis==6.2.0
-torch==2.7.1+cu118
 transformers==4.53.0
