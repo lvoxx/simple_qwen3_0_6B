@@ -1,11 +1,13 @@
 services:
   chainlit-app:
-    build: .
+    build:
+      context: ../
     container_name: chainlit_container
     ports:
       - "8000:8000"
     volumes:
-      - /app:/app
+      - ../:/app        
+    working_dir: /app  
     restart: unless-stopped
     networks:
       - gwen-chatbot
@@ -17,4 +19,3 @@ services:
           devices:
             - driver: nvidia
               capabilities: [gpu]
-    runtime: nvidia
