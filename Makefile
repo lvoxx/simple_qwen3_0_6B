@@ -4,7 +4,8 @@ CONTAINER_NAME=chainlit_container
 PORT=8000
 
 # Compose files
-COMPOSE_FILES=docker-compose.common.yml docker-compose.app.yml docker-compose.cache.yml
+COMPOSE_DIR=./docker
+COMPOSE_FILES=$(COMPOSE_DIR)/docker-compose.common.yml $(COMPOSE_DIR)/docker-compose.app.yml $(COMPOSE_DIR)/docker-compose.cache.yml
 COMPOSE_ARGS=$(foreach file,$(COMPOSE_FILES),-f $(file))
 
 # GPU flag for docker run
@@ -13,15 +14,15 @@ GPU_FLAG=--gpus all
 # Default target
 .PHONY: help
 help:
-	@echo "Makefile commands:"
-	@echo "  build        - Build the Docker image(s)"
-	@echo "  up           - Start all services"
-	@echo "  down         - Stop and remove services"
-	@echo "  restart      - Restart all services"
-	@echo "  logs         - Show logs from the main app container"
-	@echo "  bash         - Open shell inside app container"
-	@echo "  run          - Run app container manually with GPU (bypass compose)"
-	@echo "  clean        - Remove container and image"
+	@echo Makefile commands:
+	@echo   build        - Build the Docker image(s)
+	@echo   up           - Start all services
+	@echo   down         - Stop and remove services
+	@echo   restart      - Restart all services
+	@echo   logs         - Show logs from the main app container
+	@echo   bash         - Open shell inside app container"
+	@echo   run          - Run app container manually with GPU (bypass compose)
+	@echo   clean        - Remove container and image
 
 # Build all services
 .PHONY: build
